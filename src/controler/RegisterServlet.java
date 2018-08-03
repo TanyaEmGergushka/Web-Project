@@ -23,35 +23,37 @@ public class RegisterServlet extends HttpServlet {
    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// check for register credentials
-		// check if user exists
-		// insert user in db
-		// update session
-		// redirect to main html
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		String password2 = request.getParameter("password2");
+		String email =  request.getParameter("email");
+		String company = request.getParameter("company");
 		
-		
-		HttpSession sess = request.getSession();
-		
-		// TODO register this user
-		
-	String username = request.getParameter("username");
-	String password = request.getParameter("password");
-	String email = request.getParameter("email");
-	String company = request.getParameter("company");
-	// validations
-	// if (UserDao.existsUser(username)
-	User user = new User(username, company, password, email);
-
-	try {
-		UserDao.getInstanse().insertUser(user);
-		response.getWriter().append("well done, you registerred with id= " + user.getId());
-
-	} catch (SQLException e) {
-		response.getWriter().append("Ops, we have a problem with database: " + e.getMessage());
+		if (!password.equals(password2)){
+			request.setAttribute("error", "passwords missmatch");
+			request.getRequestDispatcher("register.jsp").forward(request, response);
+			return;
+		}
+		try {
+			if (!UserDao.getInstanse().existsUser(username, password)){
+				// insert user in db
+				User u = new User(username, company, password, email);
+				UserDao.getInstanse().insertUser(u);
+				// update session
+				request.getSession().setAttribute("user", u);
+				// redirect to welcome.jsp
+				request.getRequestDispatcher("welcome.jsp").forward(request, response);
+			}else {
+				request.setAttribute("error", "User already registerred");
+				request.getRequestDispatcher("login.jsp").forward(request, response);
+				return;
+			}
+		} catch (SQLException e1) {
+			request.setAttribute("error", "DB problem:" + e1.getMessage() );
+			request.getRequestDispatcher("login.jsp").forward(request, response);
+		}
 	}
-	
-	
-	}
-
+		
 	
 	@Override
 	public void destroy() {

@@ -4,9 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.sql.Statement;
 
+import model.Basket;
 import model.Product;
 
 public class ProductDao {
@@ -64,6 +67,24 @@ public class ProductDao {
 			products.add(p);
 		}
 
+	}
+
+	public HashSet<String> getProductsForOrder(long orderId) throws SQLException {
+		Connection con = DBManager.getInstanse().getConnection();
+		PreparedStatement ps = con.prepareStatement("SELECT * FROM sofyabread.`orders_have_ product` as o "
+				+ "JOIN products as p "
+				+ "ON o.product_id = p.id "
+				+ "WHERE o.order_id = ?;" /*ORDER by quantity*/);
+		
+		ps.setLong(1,orderId);
+		ResultSet rs = ps.executeQuery();
+		
+		LinkedHashSet<String> products = new LinkedHashSet<>(); /* or LinkedHashMap<String,Integer> - When we want to know the quantity*/
+		while (rs.next()) {
+			products.add(rs.getString("name"));
+		}
+		
+		return products;
 	}
 
 }

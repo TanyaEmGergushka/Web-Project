@@ -9,21 +9,14 @@
 	</head>
 	<body>
 		 <jsp:include page="header.jsp"></jsp:include>
-		 
-			
-		<c:if test="${sessionScope.name == null }">
-			<jsp:include page="login.jsp"></jsp:include>
-			<p style="text-align: right;">
-			Don't have an account yet? Please register <a href="register.jsp"> here!</a> </p> <br>
-				</c:if>
-				
-		<h3> 
-			Условия за доставка......... 
-				</h3>
-		<h3> 
-			Връзка с наш представител <a href="contacts.jsp"> тук</a> !
-				</h3>
-		
-	 		<jsp:include page="footer.jsp"></jsp:include>
+		<div class="content">	
+			<h3> 
+				Условия за доставка......... 
+					</h3>
+			<h3> 
+				Връзка с наш представител <a href="contacts.jsp"> тук</a> !
+					</h3>
+		</div>	
+	 	<jsp:include page="footer.jsp"></jsp:include>
 	</body>
 </html>

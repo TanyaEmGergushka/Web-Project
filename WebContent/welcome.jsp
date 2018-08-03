@@ -13,8 +13,8 @@
 		
 		<c:import url="products"></c:import>
 		
-		 <h1> Welcome, ${sessionScope.user.username} !		 </h1>
-		 		 
-		<jsp:include page="logout.jsp"></jsp:include>
+		<h1 class="content"> Welcome, ${sessionScope.user.username} !		 </h1>
+		 		
+		<jsp:include page="footer.jsp"></jsp:include>
 	</body>
 </html>

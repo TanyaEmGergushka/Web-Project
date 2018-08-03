@@ -66,10 +66,12 @@ public class UserDao {
 		ps.setString(1,username);
 		ResultSet rs = ps.executeQuery();
 		rs.next();
-	//	HashSet<Order> orders = new HashSet<>();
-	//	orders = OrderDAO.getInstanse().getOrdersForUser(rs.getLong("id"));
-		//TODO select orders
-		User user = new User(rs.getLong("id"), username, rs.getString("password"), rs.getString("email"), rs.getString("company")/*, orders*/);
+		
+		User user = new User(rs.getLong("id"), username, rs.getString("password"), rs.getString("email"), rs.getString("company") );
+		HashSet<Order> orders = new HashSet<>();
+		orders = OrderDAO.getInstanse().getOrdersForUser(user);
+		user.setOrders(orders);
+		
 		return user;
 		
 		

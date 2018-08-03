@@ -3,7 +3,9 @@ package controler;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.HashSet;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.jasper.tagplugins.jstl.core.Out;
 
+import model.Product;
 import model.User;
+import model.db.ProductDao;
 import model.db.UserDao;
 
 @WebServlet("/login")
@@ -60,9 +64,15 @@ public class LoginServlet extends HttpServlet {
 				// update session
 				User u = UserDao.getInstanse().getUser(name);
 				request.getSession().setAttribute("user", u);
+//				ServletContext application = getServletConfig().getServletContext();
+//				synchronized (application) {
+//					if (application.getAttribute("products") == null){
+//						HashSet<Product> products = ProductDao.getInstance().getAllProducts();  //TreeSet - orderBy
+//						application.setAttribute("products",products);	
+//					}
+//				}
 				// forward to main page
 				request.getRequestDispatcher("welcome.jsp").forward(request, response);
-				
 			} else {
 				request.setAttribute("error", "user does not exist");
 				request.getRequestDispatcher("login.jsp").forward(request, response);

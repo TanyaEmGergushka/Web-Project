@@ -14,7 +14,7 @@ public class OrderServlet extends HttpServlet {
    
     	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// check if logged /if not - redirect to lodin html
+		// check if logged /if not - redirect to login html
  // show all orders for the logged user
 	}
 	 

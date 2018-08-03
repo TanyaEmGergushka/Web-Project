@@ -1,6 +1,39 @@
 .navi {
 	display: inline;
-	background-color: brown;
-	text-decoration:underline;
-	text-shadow:orange;
-	}
+
+}
+
+.header {
+	background-color: white;
+	height: 25px;
+	border-radius: 10px;
+}
+
+.login {
+	background-color: red;
+	height: 150px;
+	width: 320px;
+	border-radius: 10px;
+}
+
+.content{
+	background-color: orange;
+	height:150px;
+	width: 320px;
+	border-radius: 10px;
+}
+
+.logout{
+	background-color: orange;
+	display: inline;
+	float: right;
+	width: 120px;
+	
+}
+
+.top{
+	background-color: yellow;
+	text-align: center;
+	height: 150px;
+	width: 1500px;
+}

@@ -2,7 +2,9 @@ package model;
 
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.Set;
 
 //import com.google.gson.Gson;
 
@@ -29,13 +31,17 @@ public class User implements Serializable {
 
 	// за създаване на потребител от базата при успешен login. При регистрация
 	// или успешен вход ще се създава такъв потребител
-	public User(long id, String username, String company, String password, String email/*, HashSet<Order> orders*/) {
+	public User(long id, String username,  String password, String company, String email) {
 		this(username, company, password, email);
 		setId(id);
 	//	this.orders = orders;
 	}
 
 	
+	public void setOrders(HashSet<Order> orders) {
+		this.orders = orders;
+	}
+
 	public String getCompany() {
 		return company;
 	}
@@ -104,7 +110,9 @@ public class User implements Serializable {
 //		}
 //	}
 //
-	 
+	 public Set <Order> getOrders() {
+		return  Collections.unmodifiableSet(orders);
+	}
 
 	public String getPassword() {
 		return password;
@@ -143,5 +151,7 @@ public class User implements Serializable {
 	public String getUsername() {
 		return username;
 	}
+
+
 
 }

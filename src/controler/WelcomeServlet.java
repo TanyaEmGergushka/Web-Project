@@ -17,18 +17,23 @@ public class WelcomeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		
-		HttpSession sess = request.getSession();
-// ако сесията е нова, препрати клиента към страницата с login, ако не го препрати към main page
-		
-		Object o = sess.getAttribute("logged");
-		boolean logged = (o!=null && (boolean) o);
-		
-		if (sess.isNew() || !logged) {
-			response.sendRedirect("home.jsp");
+		if (request.getSession().getAttribute("user") == null){
+			request.getRequestDispatcher("home.jsp").forward(request, response);
 		} else {
-			response.sendRedirect("main.jsp");
+			request.getRequestDispatcher("main.jsp").forward(request, response);
 		}
+		
+//		HttpSession sess = request.getSession();
+//		Object o = sess.getAttribute("logged");
+//		boolean logged = (o!=null && (boolean) o);
+//		
+//		if (sess.isNew() || !logged) {
+//			response.sendRedirect("home.jsp");
+//		} else {
+//			response.sendRedirect("main.jsp");
+//		}
+		
+		
 	}
 
 }

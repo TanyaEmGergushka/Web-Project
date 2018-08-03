@@ -8,13 +8,9 @@
 		<title>SofyaBreadHome</title>
 	</head>
 	<body>
-	<c:import url="products"></c:import>
+		<c:import url="products"></c:import>
 	
 		<jsp:include page="header.jsp"></jsp:include>
-		<p style="text-align: right;">
-	 <jsp:include page="login.jsp"></jsp:include>
-		</p>
-		
 		
 		<p style="position: relative;">
 			<marquee>
@@ -22,11 +18,9 @@
 					align="bottom">
 			</marquee>
 		</p>
-	
-
-	<h5 style="color: red; position: relative; font: italic;">
-		<marquee> TASTE IT !</marquee>
-	</h5>
+		<h5 style="color: red; position: relative; font: italic;">
+			<marquee> TASTE IT !</marquee>
+		</h5>
 		<jsp:include page="footer.jsp"></jsp:include>
 	</body>
 </html>

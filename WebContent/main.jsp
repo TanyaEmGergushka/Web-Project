@@ -8,23 +8,17 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Products</title>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Products</title>
 	</head>
 	<body >
-	
 		<jsp:include page="header.jsp"></jsp:include>
+		<c:import url="products"></c:import>
 		
-	<c:if test="${sessionScope.name == null }">
-		<jsp:include page="login.jsp"></jsp:include>
-		<p style="text-align: right;">
-	Don't have an account yet? Please register <a href="register.jsp"> here!</a> </p> <br>
-		</c:if>
-		
-	<h3 style="color: brown; text-align: left; font-family: cursive;">
+		<h3 style="color: brown; text-align: left; font-family: cursive;">
 			ПРОДУКТИ
-			</h3>
+		</h3>
 		
 		<table border="1">
 		<tr> 
@@ -57,7 +51,7 @@
 				<td>  <c:out value="${product.price} лв "></c:out> </td>
 				<td>  <c:out value="${product.quantity}  бр"> Not available</c:out> </td>
 			 </tr>
-	</c:forEach>
+		</c:forEach>
 	
 		</table>
 	

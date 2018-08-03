@@ -35,6 +35,7 @@ public class ProductServlet extends HttpServlet {
 					
 				}
 			}
+		
 			// forward to a view
 			HttpSession sess = request.getSession();
 			// ако сесията е нова, препрати клиента към страницата с login, ако не

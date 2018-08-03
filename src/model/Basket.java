@@ -7,19 +7,25 @@ public class Basket implements Serializable{
 
 	
 	private static final long serialVersionUID = 1L;
-	private HashMap<Product, Integer> orders = new HashMap<>();
+	
+	private HashMap<Product, Integer> products = new HashMap<>();
 
 	protected void addProductsInBasket(Product product, Integer quantity) {
-		if (this.orders.containsKey(product)) {
-			this.orders.put(product, this.orders.get(product) + quantity);
+		if (this.products.containsKey(product)) {
+			this.products.put(product, this.products.get(product) + quantity);
 		} else {
-			this.orders.put(product, quantity);
+			this.products.put(product, quantity);
 		}
 	}
 
 	@Override
 	public String toString() {
-		return "Basket: " + orders.entrySet() + ";";
+		return "Basket: " + products.entrySet() + ";";
 	}
 
+	public HashMap<Product, Integer> getProducts() {
+		return products;
+	}
+
+	
 }
