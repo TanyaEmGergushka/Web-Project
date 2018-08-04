@@ -16,7 +16,7 @@ public class User implements Serializable {
 	private String company;
 	private String password;
 	private String email;
-	private HashSet<Order> orders;
+	private Set<Order> orders;
 	// private Basket basket = new Basket();
 
 
@@ -38,7 +38,7 @@ public class User implements Serializable {
 	}
 
 	
-	public void setOrders(HashSet<Order> orders) {
+	public void setOrders(Set<Order> orders) {
 		this.orders = orders;
 	}
 
