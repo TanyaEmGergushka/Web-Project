@@ -18,8 +18,9 @@
 				Подреди по: <select name="date">
 					<option value="desc">последно харесани</option>
 					<option value="asc">първо харесани</option>
-					<input type="submit" value="ok">
+				
 				</select>
+					<input type="submit" value="ok">
 			</form>
 	
 			<c:forEach items="${sessionScope.user.orders}" var="order">
