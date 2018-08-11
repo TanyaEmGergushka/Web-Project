@@ -8,19 +8,30 @@
 		<link rel="stylesheet" type="text/css" href="styles.css">
 	</head>
 		<body>
-		<div class="header">
-			 <form class="navi" action="aboutUs.jsp">
-				 <input type="submit" value="ЗА НАС">
-			 </form>
-			  <form class="navi" action="main.jsp"> 
-				<input type="submit" value="ПРОДУКТИ">
-			 </form>
-			 <form class="navi" action="myProducts.jsp"> 
-				<input type="submit" value="ЛЮБИМИ">
-			</form>
-			<form class="navi" action="contacts.jsp">
-				<input type="submit" value="КОНТАКТИ">
-			</form>
+		
+		<div class="navmenu">
+			<a class= "navi" href="aboutUs.jsp"> ЗА НАС </a>
+			<a href ="main.jsp"> ПРОДУКТИ</a>
+			<a href ="shipping.jsp">ДОСТАВКА</a>
+			<a href ="myProducts.jsp">ЛЮБИМИ</a>
+			<a href ="contacts.jsp">КОНТАКТИ</a>
+		
 		</div>
+			<!--  
+				<div class="header">
+					 <form class="navi" action="aboutUs.jsp">
+						 <input type="submit" value="ЗА НАС">
+					 </form>
+					  <form class="navi" action="main.jsp"> 
+						<input type="submit" value="ПРОДУКТИ">
+					 </form>
+					 <form class="navi" action="myProducts.jsp"> 
+						<input type="submit" value="ЛЮБИМИ">
+					</form>
+					<form class="navi" action="contacts.jsp">
+						<input type="submit" value="КОНТАКТИ">
+					</form>
+				</div>
+			-->
 		</body>
 </html>

@@ -3,13 +3,14 @@
 
 }
 
-.header {
+/*.header {
 	background-color: white;
 	height: 25px;
 	border-radius: 10px;
-}
+}*/
 
 .login {
+	float: right;
 	background-color: red;
 	height: 150px;
 	width: 320px;
@@ -17,23 +18,75 @@
 }
 
 .content{
-	background-color: orange;
-	height:150px;
+	text-decoration: none;
+	text-transform:capitalize;
 	width: 320px;
 	border-radius: 10px;
 }
 
 .logout{
-	background-color: orange;
-	display: inline;
+	text-transform:capitalize;
+	display: inline-block;
 	float: right;
-	width: 120px;
-	
+	/* height:50px;
+	width: 150px; */
 }
 
 .top{
 	background-color: yellow;
 	text-align: center;
-	height: 150px;
-	width: 1500px;
+	width: 1300px;
 }
+
+.navmenu {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.navmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+.navmenu a:hover {
+    background-color: #777;
+}
+
+.welcomemenu {
+     margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.welcomemenu a {
+    display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.welcomemenu a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.welcomemenu a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+#avatar{
+	float: right;
+	width: 75px;
+	height: 75px;
+	border-radius: 50px;
+}
+

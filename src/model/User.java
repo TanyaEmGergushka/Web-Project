@@ -16,24 +16,27 @@ public class User implements Serializable {
 	private String company;
 	private String password;
 	private String email;
+	private String avatarUrl;
 	private Set<Order> orders;
 	// private Basket basket = new Basket();
 
 
 	// създаване на потребителя след регистрация
-	public User(String name, String company, String password, String email) {
+	public User(String name, String company, String password, String email, String avatarUrl) {
 		// TODO do-while - if string is null and add adress
 		setName(name);
 		setCompany(company);
 		setPassword(password);
 		setEmail(email);
+		this.avatarUrl = avatarUrl;
 	}
 
 	// за създаване на потребител от базата при успешен login. При регистрация
 	// или успешен вход ще се създава такъв потребител
-	public User(long id, String username,  String password, String company, String email) {
-		this(username, company, password, email);
+	public User(long id, String username,  String password, String company, String email, String avatarUrl) {
+		this(username, company, password, email, avatarUrl);
 		setId(id);
+		
 	//	this.orders = orders;
 	}
 
@@ -69,6 +72,14 @@ public class User implements Serializable {
 		} else {
 			System.out.println("enter email");
 		}
+	}
+	
+	public String getAvatarUrl() {
+		return avatarUrl;
+	}
+	
+	public void setAvatarUrl(String avatarUrl) {
+		this.avatarUrl = avatarUrl;
 	}
 
 //	public void makeOrder() {

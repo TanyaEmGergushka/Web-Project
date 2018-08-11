@@ -12,12 +12,13 @@
 	
 		<jsp:include page="header.jsp"></jsp:include>
 		
-		<p style="position: relative;">
+		<p style="position: inherit;">
 			<marquee>
 				<img src="frozen.jpg" alt="AmAm" width="500" height="377"
 					align="bottom">
 			</marquee>
 		</p>
+		
 		<h5 style="color: red; position: relative; font: italic;">
 			<marquee> TASTE IT !</marquee>
 		</h5>

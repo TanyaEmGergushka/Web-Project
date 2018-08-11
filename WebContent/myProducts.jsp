@@ -9,6 +9,12 @@
 	</head>
 	<body>
 		<jsp:include page="header.jsp"></jsp:include>
+		
+		<c:if test="${sessionScope.user == null }">
+	<h3>	Моля, влезте във вашият профил, за да покажем любимите Ви продукти! </h3>
+		</c:if>
+		
+		
 	
 		<c:if test="${sessionScope.user != null }">
 	

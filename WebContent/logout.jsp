@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<c:if test="${ sessionScope.user.username != null }">
-			 <form class="fix" action="logout" method="post">
+			 <form  class="navi" action="logout" method="post">
 					<input type="submit" value="Logout"/>
 			</form>
 		</c:if>

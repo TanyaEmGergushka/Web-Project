@@ -8,13 +8,53 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Welcome</title>
 	</head>
-	<body>
-		<jsp:include page="header.jsp"></jsp:include>
+	<body style="background-color: YELLOW;"
+	>
 		
 		<c:import url="products"></c:import>
 		
-		<h1 class="content"> Welcome, ${sessionScope.user.username} !		 </h1>
+		<div >
+				<h1 class= "top" style="color: BROWN;  font-family: cursive;">
+					СОФИЯ ХЛЯБ
+				</h1>  
+				<br>
+				
+				<img class="navi" id = "avatar" src="avatar">
+				
+					
+				<div class="logout">
+				 	<h3> ${sessionScope.user.username} 
+						 <c:if test="${sessionScope.user.username != null }">
+							<jsp:include page="logout.jsp"></jsp:include>
+						 </c:if> 	
+					</h3>
+            	</div>		
+            	
+				<h4 class="top" style="color: brown; position: relative; font-family: cursive;">
+					<marquee> ЗАМРАЗЕНИ ТЕСТЕНИ ИЗДЕЛИЯ</marquee>
+				</h4> 
+		</div>
+		
+		<div class="welcomemenu">
+			<a class= "navi" href="aboutUs.jsp"> ЗА НАС </a>
+			<a href ="main.jsp"> ПРОДУКТИ</a>
+			<a href ="shipping.jsp">ДОСТАВКА</a>
+			<a href ="myProducts.jsp">ЛЮБИМИ</a>
+			<a href ="contacts.jsp">КОНТАКТИ</a>
+		</div>
+		
+				<img src="frozen.jpg" alt="AmAm" width="400" height="277"
+					align="right" >
+					
+		<div >
+			<c:if test="${sessionScope.user == null }">
+					<p style="text-align: right;">
+					<jsp:include page="login.jsp"></jsp:include>
+					</p>
+			</c:if>
+		</div>
+		
 		 		
-		<jsp:include page="footer.jsp"></jsp:include>
+		
 	</body>
 </html>

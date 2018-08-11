@@ -14,5 +14,4 @@ public class UserTest {
 	public void ExistsUser() throws SQLException {
 		assertTrue(UserDao.getInstanse().existsUser("tanya", "tanya"));
 	}
-
 }
