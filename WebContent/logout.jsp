@@ -11,7 +11,7 @@
 	<body>
 		<c:if test="${ sessionScope.user.username != null }">
 			 <form  class="navi" action="logout" method="post">
-					<input type="submit" value="Logout"/>
+					<input  type="submit" value="Изход" style="color: #CD5C5C; border-color: gray; height: 30px; width: 80px; font-size: 14px;"/>
 			</form>
 		</c:if>
 	</body>

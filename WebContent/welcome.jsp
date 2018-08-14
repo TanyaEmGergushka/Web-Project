@@ -8,22 +8,43 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Welcome</title>
 	</head>
-	<body style="background-color: YELLOW;"
-	>
+	<body bgcolor="linen">
 		
 		<c:import url="products"></c:import>
 		
-		<div >
-				<h1 class= "top" style="color: BROWN;  font-family: cursive;">
-					СОФИЯ ХЛЯБ
-				</h1>  
-				<br>
-				
-				<img class="navi" id = "avatar" src="avatar">
-				
+		<div class="row">
+ 					 <div class="column" >
+						<img src="logo.jpg"  width="370" height="120"	 style="border-style:dashed; border-radius: 40px;" alt="logo">  
+			 		 </div>
+			 		
+				 	 <div class="column" align="center" style="padding-top:40px;">	
+				 			<i class="float"  style="font-size:28px;"> <a  style="color: #CD5C5C;" href ="contacts.jsp"> <img   id="home" src="19-512.png" >  0892 700 032 </a> </i> 
+							<i class="float"  style="font-size:28px;"> <a  style="color: #CD5C5C;" href ="shipping.jsp"> <img  id="home" src="Wall_Clock-512.png" > 8 - 20 ч </a> </i>  <br><br>
+					</div>	
 					
+					<div class="column" align="right" style="padding-top: 20px;" >	
+						<form   action="search">
+						    <input type="search" name="search" placeholder=Търсене... onfocus="this.value=''" style="border-color: gray;">
+							<i> <button style="background-color: white;border-style:solid; border-color: gray; border-radius: 5px; display: inline-block;" type="submit">
+									<img id="next" src="search_icon.png"></button> </i>
+						</form>  
+						<br>	
+						<p class="float">	
+							<c:if test="${sessionScope.user.username == null }">
+									<i style="font-size:22px;"> <a href="login.jsp"> Вход </a>  </i> 
+									<i style="font-size:22px;"> / </i>
+									<i style="font-size:22px;"> <a href="register.jsp"> Регистрация </a> </i> 
+							</c:if> 	
+						</p>
+					</div>
+  		  		</div>
+			
+				<c:if test="${sessionScope.user.username != null }">
+						<img class="navi" id = "avatar" src="avatar">
+				</c:if> 
+				
 				<div class="logout">
-				 	<h3> ${sessionScope.user.username} 
+				 	<h3 class="float"> ${sessionScope.user.username} 
 						 <c:if test="${sessionScope.user.username != null }">
 							<jsp:include page="logout.jsp"></jsp:include>
 						 </c:if> 	
@@ -33,8 +54,10 @@
 				<h4 class="top" style="color: brown; position: relative; font-family: cursive;">
 					<marquee> ЗАМРАЗЕНИ ТЕСТЕНИ ИЗДЕЛИЯ</marquee>
 				</h4> 
-		</div>
+			<br><br>
+	
 		
+	
 		<div class="welcomemenu">
 			<a class= "navi" href="aboutUs.jsp"> ЗА НАС </a>
 			<a href ="main.jsp"> ПРОДУКТИ</a>
